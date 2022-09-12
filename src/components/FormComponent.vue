@@ -11,6 +11,17 @@
             v-for="field in fields"
           >
             <v-text-field
+              v-if="isEdit && (field.key === 'ra' || field.key === 'cpf')"
+              disabled
+              v-model="form[field.key]"
+              :counter="field.counter ? field.counter : 100"
+              :error-messages="errors"
+              :label="field.label"
+              :required="field.required"
+              v-mask="field.mask ? field.mask : ''"
+            ></v-text-field>
+            <v-text-field
+              v-else
               v-model="form[field.key]"
               :counter="field.counter ? field.counter : 100"
               :error-messages="errors"
