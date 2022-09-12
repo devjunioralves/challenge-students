@@ -3,6 +3,8 @@
 ## Project setup
 ```
 yarn install
+
+change your file /src/utils/index.js to your backend address
 ```
 
 ### Compiles and hot-reloads for development

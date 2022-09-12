@@ -1,8 +1,9 @@
 import axios from 'axios';
+const apiUrl = 'http://localhost:3000/api/v1/student';
 
 const getStudents = async () => {
   try {
-    const response = await axios.get('http://localhost:3000/api/v1/student');
+    const response = await axios.get(apiUrl);
     return response;
   } catch (error) {
     new Error(error)
@@ -11,7 +12,7 @@ const getStudents = async () => {
 
 const createStudent = async (student) => {
   try {
-    const response = await axios.post('http://localhost:3000/api/v1/student', {
+    const response = await axios.post(apiUrl, {
       ...student
     });
     return response;
@@ -22,7 +23,7 @@ const createStudent = async (student) => {
 
 const updateStudent = async (student) => {
   try {
-    const response = await axios.patch(`http://localhost:3000/api/v1/student/${student.id}`, {
+    const response = await axios.patch(`${apiUrl}/${student.id}`, {
       ...student
     });
     return response;
@@ -33,7 +34,7 @@ const updateStudent = async (student) => {
 
 const deleteStudent = async (id) => {
   try{
-    const response = await axios.delete(`http://localhost:3000/api/v1/student/${id}`);
+    const response = await axios.delete(`${apiUrl}/${id}`);
     return response;
   } catch (error) {
     new Error(error)
