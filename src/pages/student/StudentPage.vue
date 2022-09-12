@@ -125,30 +125,29 @@ export default {
       this.searchText = data;
     },
 
-    submit(student) {
+    async submit(student) {
       const action = this.isEdit ? 'atualizado' : 'cadastrado'
       if (this.isEdit) {
         this.updateStudent(student)
       } else {
         this.createStudent(student)
       }
-      if (!this.error){
-        this.$swal({
+      if(!this.error){
+        await this.$swal({
           title: 'Sucesso!',
           text: `Aluno ${action} com sucesso!`,
           icon: 'success',
-          confirmButtonText: 'Ok',
-          timer: 8000
+          confirmButtonText: 'Ok'
         })
       } else {
-        this.$swal({
+        await this.$swal({
           title: 'Erro!',
           text: `Aluno não foi ${action}!`,
           icon: 'error',
-          confirmButtonText: 'Ok',
-          timer: 8000
+          confirmButtonText: 'Ok'
         })
       }
+      
       this.getStudents()
       this.$router.go()
     },
@@ -159,12 +158,12 @@ export default {
       this.isEdit = true
     },
 
-    deleteItem(item){
+    async deleteItem(item){
       const {id} = item
       this.deleteStudent(id)
 
       if (!this.error){
-        this.$swal({
+        await this.$swal({
           title: 'Sucesso!',
           text: `Aluno excluído com sucesso!`,
           icon: 'success',
@@ -172,14 +171,14 @@ export default {
           timer: 2000
         })
       } else {
-        this.$swal({
+        await this.$swal({
           title: 'Erro!',
-          text: `Houve um erro ao excluir o anulo!`,
+          text: `Houve um erro ao excluir o aluno!`,
           icon: 'error',
           confirmButtonText: 'Ok',
-          timer: 2000
         })
       }
+      this.$router.go()
     },
 
     addStudent(){
