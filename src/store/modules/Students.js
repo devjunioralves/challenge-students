@@ -3,7 +3,8 @@ import * as api from '../../utils';
 const state = () => ({
   students: [],
   student: {},
-  error: ''
+  error: '',
+  statusCode: ''
 })
 
 const mutations = {
@@ -19,9 +20,13 @@ const mutations = {
     state.students.unshift(student)
   },
 
+  deleteStudent: (state, student) => {
+    state.statusCode = student.status
+  },
+
   error(state, data) {
     return state.error = data
-},
+  },
 }
 
 const getters = {
