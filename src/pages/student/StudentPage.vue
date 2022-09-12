@@ -71,10 +71,10 @@
 
 <script>
 
-import MenuComponent from '../../components/menu/MenuComponent.vue'
-import SearchComponent from '../../components/search/SearchComponent.vue'
-import ListComponent from '@/components/list-student/ListComponent.vue'
-import FormComponent from '@/components/create-student/FormComponent.vue'
+import MenuComponent from '@/components/MenuComponent.vue'
+import SearchComponent from '@/components/SearchComponent.vue'
+import ListComponent from '@/components/ListComponent.vue'
+import FormComponent from '@/components/FormComponent.vue'
 import ButtonAddComponent from '@/components/ButtonAddComponent.vue'
 
 import { mapActions, mapState, mapGetters } from 'vuex';
