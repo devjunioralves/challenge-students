@@ -1,4 +1,4 @@
-# challenge-mais-edu-front
+# student-portal-frontend
 
 ## Project setup
 ```
